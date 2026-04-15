@@ -169,8 +169,8 @@ namespace LinqExamplesForFreshers_ExperiencedIndepth.Controllers
             //same Query we can also write using lamda expressions(method) way (inner join in linq query)
             var LamdaQueryJoinresult = students.Join(
                      courses,
-                     s => s.CourseId,        // outer key
-                     c => c.CourseId,        // inner key
+                     s => s.CourseId,        // outer key parameter(complete record)=>expression(property)
+                     c => c.CourseId,        // inner key ( s value(id) loops through each record in the inner collection)
                      (s, c) => new
                      {
                          StudentName = s.Name,
